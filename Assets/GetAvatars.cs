@@ -4,13 +4,16 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class GetAvatars : MonoBehaviour
 {
+    [SerializeField] Button getButton;
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("GetResults");
+        getButton.onClick.AddListener(() => StartCoroutine("GetResults"));
     }
 
     IEnumerator GetResults()
